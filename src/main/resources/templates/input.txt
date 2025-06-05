@@ -1,0 +1,39 @@
+dados-pessoais --nome "Bárbara Anger" --titulo "Backend Development, DevOps, Agile Methodologies" --cidade "Gravataí" --estado "RS" --pais "Brazil" --email "barbaraanger@hotmail.com" --telefone "+55 51 99195-1104" --links "https://linkedin.com/in/barbaraanger, https://github.com/barbaraanger"
+
+experiencia --cargo "System Analyst" --empresa "iFood" --periodo "Apr 2025 - Current" --descricao "Production Support:
+                                                                                                             I developed a script to generate reports on user accounts, which speeds up in the process to investigate and mitigate bug
+                                                                                                             Developed a script to validate the process of account onboarding and access"
+
+experiencia --cargo "Senior Software Engineer" --empresa "Wex Inc" --periodo "May 2024 - Mar 2025" --descricao "Architected and developed scalable microservices in AWS, reducing system latency by 15% and improving fault tolerance.
+                                                                                                               Mentored 3 engineers, leading to a 20% reduction in code defects and enhancing code review efficiency.
+                                                                                                               Optimized system performance, reducing API response time by 40%.
+                                                                                                               Implemented Agile (Kanban) optimizations, decreasing sprint cycle time by 10% and improving feature delivery speed."
+experiencia --cargo "Consultant Developer" --empresa "Thoughtworks" --periodo "May 2021 - May 2024" --descricao "Led requirements engineering sessions, ensuring at least 85% alignment between business needs and technical solutions.
+                                                                                                                                                                                           Designed and implemented a Python-based audit system, improving support triage efficiency by 30%.
+                                                                                                                                                                                           Redesigned CI/CD pipelines and enforced SOLID principles, improving deployment success rate by 50% and code quality by 15%."
+experiencia --cargo "Software Engineer" --empresa "SOUTHSYSTEM" --periodo "Jun 2020 - Mar 2021" --descricao "Led containerization strategy using Docker & Kubernetes, reducing deployment time by 15% and scaling application resources dynamically.
+                                                                                                                                                                                                                                                       Integrated payment processing APIs, enhancing the user experience and reducing transaction errors by 20%.
+                                                                                                                                                                                                                                                       Implemented Jenkins-based CI/CD pipeline, significantly reducing downtime  by 14.5% during software updates."
+experiencia --cargo "Software Developer" --empresa "Stefanini Brasil" --periodo "Jan 2020 - Jun 2020" --descricao "Developed mission-critical microservices for banking transactions, ensuring 99.9% uptime and processing around 333.3 requests/sec.
+                                                                                                                                                                                                                                                       Delivered a critical microservice that processed one million accounting data entries with a 75% reduction in processing time (from 2 hours to 30 minutes), exceeding performance targets.
+                                                                                                                                                                                                                                                       Worked with cross-functional teams to refactor legacy code, reducing maintenance effort by 20% and improving stability."
+experiencia --cargo "Software Tester (QA) Intern" --empresa "DBServer" --periodo "Sep 2019 - Jan 2020" --descricao "Learned and practiced automated testing with Selenium and C# .NET, building foundational skills in quality assurance and Agile methodologies.
+Gained hands-on experience with Agile methodologies, participating in test case creation and exploratory testing sessions.
+Assisted in creating test cases and scenarios, developing a strong understanding of software testing principles and best practices."
+
+experiencia --cargo "Software Developer Intern" --empresa "Aceleradora Ágil" --periodo "Fev 2019 - Aug 2019" --descricao "Developed Raízes (project to connect agro producers with markets and delivery people) from scratch using extreme programming & TDD, achieving 80% code coverage and reducing production bugs.
+Reviewed product requirements and provided feedback, reducing feature rework by 50% and improving UX consistency.
+Conducted usability and stress tests to identify performance bottlenecks, ensuring smooth user experience and stable system performance under high traffic loads. Identified and resolved UI inconsistencies and performance bottlenecks through usability and stress testing, enhancing system responsiveness and user experience."
+
+experiencia --cargo "Web Developer Intern" --empresa "SOS Vagas" --periodo "May 2018 - Dec 2018" --descricao "Developed responsive job listing platform from scratch using HTML/CSS, Bootstrap, and JQuery, increasing site traffic by 75%.
+Optimized MySQL queries and developed backend APIs in PHP, reducing page load times by 84%.
+Created automated Excel reports, reducing manual data processing time by 45% and improving decision-making speed."
+
+formacao --curso "Bachelor of Computer Science" --instituicao "Universidade do Vale do Rio dos Sinos" --periodo "2023 - 2026" --nivel "Bachelor's Degree"
+formacao --curso "Bachelor of Computer Engineering" --instituicao "Pontifícia Universidade Católica do Rio Grande do Sul" --periodo "Mar 2017 - Jul 2020" --nivel "Bachelor's Degree"
+
+habilidade --habilidades "English (Advanced – C1), Brazilian Portuguese Native" --tipo "Idioma"
+habilidade --habilidades "Java, Python, JPA, React, TypeScript, Node.js, AWS" --tipo "TECNOLOGIA"
+habilidade --habilidades "Backend Development, Microservices, Containerization, Agile, DevOps" --tipo "METODOLOGIA"
+
+resumo --resumo "Qualified Consultant Developer with 5+ years in Agile projects and full-stack development. Skilled in backend systems, microservices, and cloud computing (AWS, Java, Python). Passionate about mentoring, process optimization, and building scalable, high-performance solutions."

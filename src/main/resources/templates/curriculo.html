@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-br">
+<meta charset="UTF-8">
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.4;
+            margin: 20px;
+            font-size: 14px
+        }
+
+        @page {
+            size: A4;
+            margin: 1cm;
+        }
+
+        .name {
+            font-size: 25px;
+            font-weight: normal;
+            margin: 0;
+        }
+
+        h1, h2, h3 {
+            color: #333;
+        }
+
+        h2, h3, h4 {
+            text-transform: uppercase
+        }
+
+        .section {
+            margin: 0 0 15px;
+            padding: 0px;
+        }
+
+        .section p {
+            margin: 0;
+            padding: 0;
+        }
+
+        .section h4 {
+            border-bottom: 2px solid #cacaca;
+            margin: 0 0 5px
+        }
+
+        .contact-info ul {
+            padding: 0;
+            margin: -9px 0 -9px;
+        }
+
+        .contact-info a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-info li {
+            padding: 0;
+            font-size: 14px;
+            justify-content: left;
+            margin: 0 1px 0 1px;
+            display: inline;
+            list-style-type: disc;
+        }
+
+        .contact-info li:after {
+            content: '\00a0\2022\00a0\00a0';
+            color: rgba(0, 0, 0, 0.5);
+            font-size: 16px;
+            margin: 0 0 0 10px;
+        }
+
+        .contact-info li:first-child:before, .contact-info li:last-child:after {
+            content: '';
+        }
+
+        .experience-item {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .experience-item p {
+            margin: 0;
+            padding: 0
+        }
+
+        .experience h3, .education h3 {
+            margin-bottom: 5px;
+        }
+
+        .experience p, .education p {
+            margin: 0;
+            padding: 0
+        }
+
+        .skills ul {
+            padding: 0;
+            margin: 0;
+        }
+
+        .skills li {
+            display: inline-block;
+            list-style-type: disc;
+            margin-right: 10px;
+        }
+
+        .skills li:after {
+            content: '\00a0\2022\00a0\00a0';
+            color: rgba(0, 0, 0, 0.5);
+            font-size: 16px;
+            margin: 0 0 0 10px;
+        }
+
+        .skills li:first-child:before, .skills li:last-child:after {
+            content: '';
+        }
+
+        .objective span {
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .objective {
+            margin: 0 0 10px;
+        }
+    </style>
+    <title>Resume - [[${curriculo.dadosPessoais.nome}]]</title>
+</head>
+<body th:align="center">
+
+<h1 class="name">[[${curriculo.dadosPessoais.nome}]]</h1>
+
+<div class="section contact-info">
+    <hr style="height:1px;background-color:gray;border:none;width: 100%"/>
+    <ul>
+        <li>[[${curriculo.dadosPessoais.contato.email}]]</li>
+        <li>[[${curriculo.dadosPessoais.contato.telefone}]]</li>
+        <li th:each="entry  : ${linkTitleMap}"><a th:href="${entry.value}"><span th:text="${entry.key}"></span></a></li>
+        <li>[[${curriculo.dadosPessoais.endereco.cidade}]], [[${curriculo.dadosPessoais.endereco.estado}]] -
+            [[${curriculo.dadosPessoais.endereco.pais}]]
+        </li>
+    </ul>
+    <hr style="height:1px;background-color:gray;border:none;width: 100%"/>
+</div>
+
+<div class="section" th:if="${curriculo.resumo}">
+    <div class="objective">[[${curriculo.dadosPessoais.tituloCargo}]]</div>
+    <h4>Summary</h4>
+    <p>[[${curriculo.resumo}]]</p>
+</div>
+
+<div class="section" th:if="${!curriculo.experiencias.isEmpty()}">
+    <h4>Experience</h4>
+    <div class="experience-item" th:each="exp : ${curriculo.experiencias}">
+        <span style="font-style: italic" th:text="${exp.empresa}"/>, <strong><span th:text="${exp.cargo}"/></strong>
+        <p><span style="font-size: 12px; font-style: italic" th:text="${exp.periodo}"/></p>
+        <p style="color: #3d3d3d" th:text="${exp.descricao}"/>
+    </div>
+</div>
+
+<div class="section" th:if="${!curriculo.formacoes.isEmpty()}">
+    <h4>Education</h4>
+    <ul style="list-style-type: disc;">
+        <li th:each="formacao : ${curriculo.formacoes}">[[${formacao.titulo}]] - [[${formacao.instituicao}]] <span>[[${formacao.periodo}]]</span>
+        </li>
+    </ul>
+</div>
+
+<div class="section" th:if="${!curriculo.cursos.isEmpty()}">
+    <h4>Cursos</h4>
+    <ul>
+        <li th:each="curso : ${curriculo.cursos}">[[${curso.titulo}]] - [[${curso.instituicao}]] ([[${curso.periodo}]])
+            <span>Carga Horária: [[${curso.cargaHoraria}]] hours</span></li>
+    </ul>
+</div>
+
+<div class="section skills" th:if="${!curriculo.habilidades.isEmpty()}">
+    <h4>Skills</h4>
+    <div th:each="entry : ${habilidadesPorTipo}">
+        <h5 th:text="${entry.tipoHabilidade.getDescricao()}"></h5>
+        <ul>
+            <li th:each="habilidade : ${entry.getHabilidades()}" th:text="${habilidade}"></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

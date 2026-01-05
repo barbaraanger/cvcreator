@@ -31,7 +31,7 @@
 
         .section {
             margin: 0 0 15px;
-            padding: 0px;
+            padding: 0;
         }
 
         .section p {
@@ -150,12 +150,12 @@
 
 <div class="section" th:if="${curriculo.resumo}">
     <div class="objective">[[${curriculo.dadosPessoais.tituloCargo}]]</div>
-    <h4>Summary</h4>
+    <h4>RESUMO</h4>
     <p>[[${curriculo.resumo}]]</p>
 </div>
 
 <div class="section" th:if="${!curriculo.experiencias.isEmpty()}">
-    <h4>Experience</h4>
+    <h4>Experiência</h4>
     <div class="experience-item" th:each="exp : ${curriculo.experiencias}">
         <span style="font-style: italic" th:text="${exp.empresa}"/>, <strong><span th:text="${exp.cargo}"/></strong>
         <p><span style="font-size: 12px; font-style: italic" th:text="${exp.periodo}"/></p>
@@ -164,7 +164,7 @@
 </div>
 
 <div class="section" th:if="${!curriculo.formacoes.isEmpty()}">
-    <h4>Education</h4>
+    <h4>Educação</h4>
     <ul style="list-style-type: disc;">
         <li th:each="formacao : ${curriculo.formacoes}">[[${formacao.titulo}]] - [[${formacao.instituicao}]] <span>[[${formacao.periodo}]]</span>
         </li>
@@ -180,7 +180,7 @@
 </div>
 
 <div class="section skills" th:if="${!curriculo.habilidades.isEmpty()}">
-    <h4>Skills</h4>
+    <h4>Habilidades</h4>
     <div th:each="entry : ${habilidadesPorTipo}">
         <h5 th:text="${entry.tipoHabilidade.getDescricao()}"></h5>
         <ul>
